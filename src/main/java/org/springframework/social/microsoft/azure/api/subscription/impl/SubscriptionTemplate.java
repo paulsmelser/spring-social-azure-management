@@ -10,6 +10,7 @@ import org.springframework.social.microsoft.azure.api.subscription.SubscriptionO
 import org.springframework.social.microsoft.azure.http.client.RestResource;
 
 public class SubscriptionTemplate extends AbstractTemplate implements SubscriptionOperations{
+	public static final String LOCATIONS = "locations";
 	private final RestResource restResource;
 	public SubscriptionTemplate(RestResource restResource, boolean isAuthorized) {
 		super(isAuthorized);
@@ -36,7 +37,7 @@ public class SubscriptionTemplate extends AbstractTemplate implements Subscripti
 	@Override
 	public ResponseEntity<LocationListResult> locations(String subscriptionId) {
 		return restResource.request()
-				.pathSegment(subscriptionId, "locations")
+				.pathSegment(subscriptionId, LOCATIONS)
 				.get(LocationListResult.class);
 	}
 }
