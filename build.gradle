@@ -92,7 +92,7 @@ publishing {
 				asNode().children().last() + {
 					resolveStrategy = Closure.DELEGATE_FIRST
 					name 'spring-social-microsoft-azure'
-					description 'A provider extension for Spring Social to enable connectivity with Microsoft and an API binding for Microsoft\'s Partner Center API.'
+					description 'A provider extension for Spring Social to enable connectivity with Microsoft and an API binding for Microsoft\'s Azure Management REST API.'
 					url "https://github.com/SpringSocialMicrosoft/spring-social-azure-management"
 					scm {
 						url "https://github.com/SpringSocialMicrosoft/spring-social-azure-management.git"

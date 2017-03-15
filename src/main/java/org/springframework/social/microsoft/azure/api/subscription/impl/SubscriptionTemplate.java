@@ -3,6 +3,7 @@ package org.springframework.social.microsoft.azure.api.subscription.impl;
 import org.springframework.http.ResponseEntity;
 import org.springframework.social.microsoft.azure.Azure;
 import org.springframework.social.microsoft.azure.api.AbstractTemplate;
+import org.springframework.social.microsoft.azure.api.subscription.LocationListResult;
 import org.springframework.social.microsoft.azure.api.subscription.Subscription;
 import org.springframework.social.microsoft.azure.api.subscription.SubscriptionListResult;
 import org.springframework.social.microsoft.azure.api.subscription.SubscriptionOperations;
@@ -30,5 +31,12 @@ public class SubscriptionTemplate extends AbstractTemplate implements Subscripti
 		return restResource.request()
 				.pathSegment(subscriptionId)
 				.get(Subscription.class);
+	}
+
+	@Override
+	public ResponseEntity<LocationListResult> locations(String subscriptionId) {
+		return restResource.request()
+				.pathSegment(subscriptionId, "locations")
+				.get(LocationListResult.class);
 	}
 }

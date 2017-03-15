@@ -6,4 +6,5 @@ public interface SubscriptionOperations {
 
 	ResponseEntity<SubscriptionListResult> list();
 	ResponseEntity<Subscription> get(String subscriptionId);
+	ResponseEntity<LocationListResult> locations(String subscriptionId);
 }
